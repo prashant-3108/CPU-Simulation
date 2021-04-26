@@ -208,7 +208,9 @@ The simulation will collect the following statistics:
         char *term_stage;           -   If thread terminates then detailed information about that thread is stored
 
 
-#### Helper Functions
+<br>
+
+### Helper Functions
 
     1. void initialize_heap(thread *heap) 
 Initializing the Heap making HeapSize = 0 and setting First element as most minimum. [-INT_MAX]
@@ -217,21 +219,26 @@ Initializing the Heap making HeapSize = 0 and setting First element as most mini
 Element from thread array in main function will be inserted
 
 **Priority while insertion -** 
-###### Lower the Arrival Time Higher the Priority.
+*Lower the Arrival Time Higher the Priority.*
+
+
+
+
 Finding the position by upward traversal in heap by checking if parent arrival is more,  then swapping the nodes.
 
     3. thread del_minheap(thread *heap)
 Root will be deleted which will be the minimum element i.e. minimum arrival time Rest of the elements will be adjusted with next minimum element as next root.
 
 **Priority while deletion-** 
-###### Lower the Arrival Time Higher the Priority.
+*Lower the Arrival Time Higher the Priority.*
 else if equal arrival time:
-###### Lower the Process ID Higher the Priority.
+*Lower the Process ID Higher the Priority.*
+
     
 
     4. merge(states) and merge_sort(state_array)
 
-THIS IS IMPORTANT FUNCTION FOR ARRANGING THE STATE CHANGES IN SORTED AS WELL AS CHRONOLOGICAL ORDER.
+**THIS IS IMPORTANT FUNCTION FOR ARRANGING THE STATE CHANGES IN SORTED AS WELL AS CHRONOLOGICAL ORDER. ( for Verbose mode output )**
 
 Since **Merge Sort** is a *STABLE* sorting algorithm, hence it will sort the state-changes with respect to the time of occurence of that transition.
 If time occurence of the two state changes are same then it will print the state change in Chronological order i.e that has first occured at that instant also.
@@ -240,13 +247,13 @@ If time occurence of the two state changes are same then it will print the state
 
 ## Functionalities 
 
-###### 1. Initializing the Heap - 
+##### 1. Initializing the Heap - 
 Minimum Priority Queue is applied here as we need the thread which has came first into the queue based on arrival time and on basis of processes if arrival is same Priority / Ready Queue of the threads has been initialized.
 
-###### 2. Inserting into the Ready Queue - 
+##### 2. Inserting into the Ready Queue - 
 All threads in thread_array has been inserted into the queue.
 
-###### 4. Checking for Flags - 
+##### 3. Checking for Flags - 
 Checking what has to be outputed depending on the flags that has been entered to command line:
 
     -r:
@@ -255,7 +262,7 @@ Checking what has to be outputed depending on the flags that has been entered to
         First Come First Serve algorithm
 
 
-##### 5. First Come First Serve algorithm - 
+###### First Come First Serve algorithm - 
 
     While HeapSize != 0:
         extract the root 
@@ -281,9 +288,9 @@ Checking what has to be outputed depending on the flags that has been entered to
                 store termination time of the process to calculate average turnaround time for the processes
 
 
-##### 6. Round Robin Algorithm - 
+###### Round Robin Algorithm - 
 
-    while HeapSize != 0:
+    While HeapSize != 0:
         extract the root [most prior]
 
         if time_instant_now < arrival:
@@ -320,4 +327,5 @@ Checking what has to be outputed depending on the flags that has been entered to
                 /*running to terminated*/
         
 
+##### 3. Freeing the Dynamic Memory Allocated at the end.
 
