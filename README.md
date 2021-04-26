@@ -137,7 +137,7 @@ The simulation will collect the following statistics:
 	arrival: 50
 	service time: 200 units, I/O time: 20 units, turnaround time: 421 units, finish time: 471 units
 
-##### 4. Passing Input with command -r with all 3 above combinations will give results according to Round Robin Algorithm.
+##### 4. Passing Input with command -r with the time quantum (Eg. 10 below) along with all 3 above combinations will give results according to Round Robin Algorithm.
 
     $ ./simcpu -d –r 10 < input_file
 
